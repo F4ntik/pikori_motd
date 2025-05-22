@@ -25,20 +25,25 @@
       color: #ffd700; letter-spacing: 1px;
     }
     .discord-block {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background: rgba(44,57,89,0.96);
       border: 1px solid #243063;
       border-radius: 11px;
       padding: 8px;
       margin: 10px 0;
+      flex-wrap: wrap;
     }
     .logo-img {
       max-width: 120px; border-radius: 8px;
       box-shadow: 0 2px 10px #0005;
+      flex-shrink: 0;
     }
     .discord-content {
       flex: 1; margin-left: 12px; text-align: left;
       font-size: 0.95em;
+      min-width: 200px;
     }
     .discord-content b { display: block; margin-bottom: 4px; }
     .discord-content ul {
@@ -71,10 +76,6 @@
     .footer a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 700px) {
-      .discord-block { flex-direction: column; align-items: center; }
-      .discord-content { margin: 8px 0 0 0; text-align: center; }
-    }
   </style>
 </head>
 <body>
@@ -88,7 +89,7 @@
         <ul>
           <li>Общий чат между Discord и игрой</li>
           <li>Спецкоманды на сервере и в Discord</li>
-          <li>Перед ником можно ставить префиксы на ваш вкус</li>
+          <li>Префиксы перед ником (на любой вкус)</li>
         </ul>
         Ссылка: <a href="https://discord.gg/US5ZeEf8" target="_blank">https://discord.gg/US5ZeEf8</a>
       </div>
