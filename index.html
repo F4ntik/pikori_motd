@@ -26,39 +26,35 @@
     }
     .discord-block {
       display: flex;
-      flex-wrap: nowrap; /* запрет переноса */
+      flex-wrap: nowrap;
       align-items: flex-start;
       background: rgba(44,57,89,0.96);
       border: 1px solid #243063;
       border-radius: 11px;
       padding: 8px;
       margin: 10px 0;
-      overflow-x: auto; /* горизонтальный скролл, если не помещается */
+      overflow-x: auto;
     }
     .logo-img {
-      max-width: 72px;
+      /* динамический размер */
+      max-height: 60px;
+      height: auto;
+      width: auto;
       border-radius: 8px;
       box-shadow: 0 2px 10px #0005;
-      flex: 0 0 auto; /* не сжимается */
+      flex: 0 0 auto;
       margin-right: 10px;
     }
     .discord-content {
       flex: 1 1 auto;
-      min-width: 0; /* позволяет сжиматься */
+      min-width: 0;
       text-align: left;
       font-size: 0.95em;
     }
     .discord-content b { display: block; margin-bottom: 4px; }
-    .discord-content ul {
-      margin: 6px 0 6px 20px;
-    }
-    .discord-content a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-    .discord-content a:hover {
-      text-decoration: underline;
-    }
+    .discord-content ul { margin: 6px 0 6px 20px; }
+    .discord-content a { color: #ffd700; text-decoration: none; }
+    .discord-content a:hover { text-decoration: underline; }
     .rules-block {
       background: rgba(44,57,89,0.96);
       border: 1px solid #243063;
@@ -69,10 +65,7 @@
       font-size: 0.95em;
     }
     .rules-block b { display: block; margin-bottom: 4px; }
-    .rules-block ul {
-      list-style: disc inside;
-      padding: 0; margin: 4px 0;
-    }
+    .rules-block ul { list-style: disc inside; padding: 0; margin: 4px 0; }
     .footer {
       margin-top: 20px; padding-top: 10px;
       border-top: 1px solid #444;
@@ -80,11 +73,12 @@
       text-align: center;
       line-height: 1.4;
     }
-    .footer a {
-      color: #ffd700; text-decoration: none;
-    }
-    .footer a:hover {
-      text-decoration: underline;
+    .footer a { color: #ffd700; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .favicon {
+      width: 16px; height: 16px;
+      vertical-align: middle;
+      margin-right: 6px;
     }
   </style>
 </head>
@@ -101,7 +95,9 @@
           <li>Спецкоманды на сервере и в Discord</li>
           <li>Префиксы перед ником (на любой вкус)</li>
         </ul>
-        Ссылка: <a href="https://discord.gg/US5ZeEf8" target="_blank">https://discord.gg/US5ZeEf8</a>
+        Ссылка: <a href="https://discord.gg/US5ZeEf8" target="_blank">
+          <img class="favicon" src="https://discord.com/favicon.ico" alt="">https://discord.gg/US5ZeEf8
+        </a>
       </div>
     </div>
     <div class="rules-block">
@@ -115,9 +111,15 @@
       </ul>
     </div>
     <div class="footer">
-      Чат telegram: <a href="https://t.me/+7PAldbxU9ZBiZWYy" target="_blank">https://t.me/+7PAldbxU9ZBiZWYy</a><br>
-      Для ценителей ретро-игр: <a href="https://uplay2.ru/" target="_blank">https://uplay2.ru/</a><br>
-      Обсуждаем на Пикабу: <a href="https://pikabu.ru/community/ori" target="_blank">https://pikabu.ru/community/ori</a>
+      <a href="https://t.me/+7PAldbxU9ZBiZWYy" target="_blank">
+        <img class="favicon" src="https://telegram.org/favicon.ico" alt="">Чат Telegram: t.me/+7PAldbxU9ZBiZWYy
+      </a><br>
+      <a href="https://uplay2.ru/" target="_blank">
+        <img class="favicon" src="https://uplay2.ru/favicon.ico" alt="">uPlay2.ru
+      </a><br>
+      <a href="https://pikabu.ru/community/ori" target="_blank">
+        <img class="favicon" src="https://pikabu.ru/favicon.ico" alt="">pikabu.ru/community/ori
+      </a>
     </div>
   </div>
 </body>
