@@ -36,7 +36,8 @@
       flex-wrap: wrap;
     }
     .logo-img {
-      max-width: 120px; border-radius: 8px;
+      max-width: 96px; /* уменьшено на 20% от 120px */
+      border-radius: 8px;
       box-shadow: 0 2px 10px #0005;
       flex-shrink: 0;
     }
@@ -48,6 +49,13 @@
     .discord-content b { display: block; margin-bottom: 4px; }
     .discord-content ul {
       margin: 6px 0 6px 20px;
+    }
+    .discord-content a {
+      color: #ffd700; /* яркий цвет ссылки, как в футере */
+      text-decoration: none;
+    }
+    .discord-content a:hover {
+      text-decoration: underline;
     }
     .rules-block {
       background: rgba(44,57,89,0.96);
