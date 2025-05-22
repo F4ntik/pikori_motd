@@ -4,121 +4,107 @@
   <meta charset="utf-8"/>
   <title>Сервер "Онлайн ретро-игры" — CS 1.6</title>
   <style>
-    /* Разрешаем body/фрейм по всей ширине */
     html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
+      width: 100%; height: 100%; margin: 0; padding: 0;
       background: linear-gradient(rgba(25,35,55,0.92), rgba(25,35,55,0.92));
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #f3f3f3;
-      overflow: hidden; /* скролл внутри .centered */
+      overflow: auto; /* стандартный скролл */
     }
-
     .centered {
-      /* вместо max-width:470px */
-      width: 90vw;           /* 90% от ширины окна */
-      max-width: 800px;      /* но не шире 800px */
-      margin: 10px auto;     /* по центру горизонтально */
+      width: 90vw; max-width: 800px;
+      margin: 10px auto;
       background: rgba(36,44,62,0.96);
       border-radius: 18px;
       box-shadow: 0 4px 20px #0006;
-      padding: 15px 20px;
-      overflow-y: auto;      /* только вертикальный скролл здесь */
+      padding: 10px 15px;
       text-align: center;
     }
-
     h1 {
-      font-size: 1.6em;
-      margin-bottom: 0.2em;
-      color: #ffd700;
-      letter-spacing: 1px;
-    }
-    .logo-img {
-      display: block;
-      margin: 0 auto 16px;
-      max-width: 140px;      /* чуть побольше логотип */
-      border-radius: 10px;
-      box-shadow: 0 2px 10px #0005;
-    }
-    p {
-      margin: 6px 0;
-      line-height: 1.5;
-    }
-    ul {
-      text-align: left;
-      margin: 8px 0 14px 20px;
-    }
-    a, .btn-link {
-      color: #ffd700;
-      text-decoration: underline;
-      transition: color 0.12s;
-    }
-    a:hover, .btn-link:hover {
-      background: #ffd700; color: #233; text-decoration: none; border-radius: 7px;
-    }
-    .btn-link {
-      display: inline-block;
-      margin: 6px 4px;
-      padding: 8px 20px;
-      background: #2760ad;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 9px;
-      font-size: 1em;
-      box-shadow: 0 1px 7px #0003;
+      font-size: 1.6em; margin: 10px 0;
+      color: #ffd700; letter-spacing: 1px;
     }
     .discord-block {
+      display: flex; align-items: center; justify-content: space-between;
       background: rgba(44,57,89,0.96);
       border: 1px solid #243063;
       border-radius: 11px;
-      padding: 10px;
-      margin-top: 10px;
+      padding: 8px;
+      margin: 10px 0;
     }
-
-    @media (max-width: 900px) {
-      .centered { width: 95vw; padding: 10px; }
-      .logo-img { max-width: 100px; }
+    .logo-img {
+      max-width: 120px; border-radius: 8px;
+      box-shadow: 0 2px 10px #0005;
+    }
+    .discord-content {
+      flex: 1; margin-left: 12px; text-align: left;
+    }
+    .discord-content b { display: block; margin-bottom: 4px; }
+    .discord-content .btn-link {
+      margin-top: 6px;
+    }
+    .rules-block {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin: 10px 0;
+      text-align: left;
+    }
+    .rules-block ul {
+      list-style: disc inside;
+      padding: 0; margin: 0;
+    }
+    .rules-block .actions {
+      display: flex; flex-direction: column; align-items: flex-end;
+      gap: 6px;
+    }
+    a, .btn-link {
+      color: #ffd700; text-decoration: underline;
+      transition: all 0.12s;
+    }
+    .btn-link {
+      display: inline-block; padding: 6px 16px;
+      background: #2760ad; color: #fff;
+      font-weight: bold; border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 1px 7px #0003;
+    }
+    a:hover, .btn-link:hover {
+      background: #ffd700; color: #233; text-decoration: none;
+    }
+    @media (max-width: 700px) {
+      .discord-block, .rules-block { flex-direction: column; align-items: center; }
+      .discord-content, .rules-block .actions { margin: 8px 0 0 0; align-items: center; text-align: center; }
     }
   </style>
 </head>
 <body>
   <div class="centered">
-    <img class="logo-img"
-         src="http://raw.githubusercontent.com/F4ntik/pikori_motd/refs/heads/main/logo.jpg"
-         alt="Логотип" />
     <h1>Сервер CS 1.6 от «Онлайн ретро-игры»</h1>
-    <p>Добро пожаловать! Это <b>классический сервер</b> без модов.</p>
     <div class="discord-block">
-      <b>У нас есть Discord-сервер!</b><br>
-      <a class="btn-link" href="https://discord.gg/US5ZeEf8" target="_blank">Присоединиться в Discord</a>
-      <p style="margin-top:8px; font-size:0.98em; text-align:left;">
-        <b>Привяжите Discord к серверу CS</b> и получите
-        <span style="color:#ffd700;">дополнительные фишки и бонусы:</span>
+      <img class="logo-img" src="http://raw.githubusercontent.com/F4ntik/pikori_motd/refs/heads/main/logo.jpg" alt="Логотип"/>
+      <div class="discord-content">
+        <b>У нас есть Discord-сервер!</b>
+        Привяжите Discord к серверу CS и получите дополнительные фишки и бонусы:
         <ul>
           <li>Эксклюзивные скины</li>
           <li>Доступ к спецкомандам</li>
           <li>Привилегии для активных участников</li>
         </ul>
-      </p>
+        <a class="btn-link" href="https://discord.gg/US5ZeEf8" target="_blank">Присоединиться</a>
+      </div>
     </div>
-    <p style="margin-top:14px;">Правила сервера:</p>
-    <ul>
-      <li>Уважайте друг друга</li>
-      <li>Приглашайте друзей</li>
-      <li>Играйте честно</li>
-      <li>Без грубых оскорблений, помните — это игра!</li>
-    </ul>
-    <p>Спонсор сервера — 
-      <a href="https://uplay2.ru/" class="btn-link" target="_blank">uPlay2.ru</a>
-      (сайт о ретро-играх)
-    </p>
-    <p>Общаемся и обсуждаем на 
-      <a href="https://pikabu.ru/community/ori" class="btn-link" target="_blank">Пикабу</a>
-    </p>
-    <p style="margin-top:14px;">Наслаждайтесь игрой!</p>
+    <div class="rules-block">
+      <ul>
+        <li>Уважайте друг друга</li>
+        <li>Приглашайте друзей</li>
+        <li>Играйте честно</li>
+        <li>Без грубых оскорблений</li>
+      </ul>
+      <div class="actions">
+        <a class="btn-link" href="https://uplay2.ru/" target="_blank">Спонсор: uPlay2.ru</a>
+        <a class="btn-link" href="https://pikabu.ru/community/ori" target="_blank">Обсуждаем на Пикабу</a>
+      </div>
+    </div>
+    <p>Наслаждайтесь игрой!</p>
   </div>
 </body>
 </html>
